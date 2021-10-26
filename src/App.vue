@@ -20,11 +20,7 @@
             @click="selectItem(item, index)"
           >
             <Card
-              :itemName="item.itemName"
-              :itemImage="item.itemImage"
-              :itemDescription="item.itemDescription"
-              :itemCost="item.itemCost"
-              :itemId="item.itemId"
+               v-bind="item"
             />
           </div>
         </div>
@@ -33,11 +29,7 @@
         <div class="row">
           <div class="col-12" v-if="currentItem">
             <Card
-              :itemName="currentItem.itemName"
-              :itemImage="currentItem.itemImage"
-              :itemDescription="currentItem.itemDescription"
-              :itemCost="currentItem.itemCost"
-              :itemId="currentItem.itemId"
+              v-bind='currentItem'
             />
           </div>
           <div class="col-12" v-else>
@@ -48,6 +40,8 @@
     </div>
   </div>
 </template>
+
+
 
 <script>
 import Card from "./components/Card.vue";
